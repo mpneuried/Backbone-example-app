@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Backbone Beispiel</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="http://documentcloud.github.com/underscore/underscore.js"></script>
+    <script src="http://documentcloud.github.com/backbone/backbone.js"></script>
+    <script src="bb.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="index2.html">Backbone Beispiel</a>
+          <!--<ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="row">
+          <div class="span4">
+            <h3>Adressbuch</h3>
+            <div id="collectionTarget"></div>
+            <a class="btn success" href="#create/contact">neuer Kontakt </a>
+          </div>
+          <div class="span10">
+            <div id="modelTarget"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <h3>Beispiele für einen zugriff von Außen</h3>
+      <pre>// erstellen
+      BB._app._collections.addressbook.create( { name: "EXTERN" } );</pre>
+
+      <pre>// ändern
+      BB._app._collections.addressbook.get( "...ID..." ).set( { "name": "geändert" } );</pre>
+
+      <pre>// ändern + DB
+      BB._app._collections.addressbook.get( "...ID..." ).save( { "name": "geändert in DB" } );</pre>
+
+      <pre>// löschen
+      BB._app._collections.addressbook.get( "...ID..." ).destroy();</pre>
+
+      <footer>
+        <p>&copy; TCS 2011</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
